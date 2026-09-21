@@ -20,11 +20,10 @@ Item {
     visible: false
     z: 1000
 
-    // Wherever this eventually gets hosted -- GitHub renders a .md file
-    // straight from the repo, so no separate hosting/Pages setup is
-    // needed, just committing docs/setup-keys.md and updating this to the
-    // real repo path once it exists.
-    readonly property string instructionsUrl: "https://github.com/YOUR_GITHUB_USERNAME/project-dex/blob/main/docs/setup-keys.md"
+    // GitHub renders a .md file straight from the repo, so no separate
+    // hosting/Pages setup is needed -- docs/setup-keys.md is committed
+    // there directly.
+    readonly property string instructionsUrl: "https://github.com/LargeDexter/project_dex/blob/main/docs/setup-keys.md"
 
     readonly property var fieldDefs: [
         {
