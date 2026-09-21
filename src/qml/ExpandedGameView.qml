@@ -66,6 +66,14 @@ Item {
         if (event.key === Qt.Key_Escape || event.key === Qt.Key_Space) {
             Dex.UiState.collapse()
             event.accepted = true
+        } else if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
+            // Play/Install was only wired to the pill button's MouseArea --
+            // nothing here answered Return, so the gamepad's Confirm button
+            // (dispatched as Qt::Key_Return, see gamepad_input.cpp) did
+            // nothing while this screen was open. Same action as clicking
+            // the pill button or the cover art.
+            root.launchOrInstall()
+            event.accepted = true
         }
     }
 
