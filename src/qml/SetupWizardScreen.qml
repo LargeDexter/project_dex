@@ -71,7 +71,16 @@ Item {
         root.closed()
     }
 
-    onVisibleChanged: if (visible) forceActiveFocus()
+    // Qt.callLater, not a direct call: this screen auto-opens at startup
+    // (see Main.qml's Component.onCompleted) right as the main window is
+    // doing its first fullscreen transition (now the default -- see
+    // Main.qml's visibility binding). Calling forceActiveFocus() before
+    // that transition settles doesn't stick -- focus silently falls back
+    // to whatever had it before (the game grid), leaving the wizard
+    // visible but not controller/keyboard-navigable. Deferring to the next
+    // event-loop tick sidesteps the race. Same pattern ExpandedGameView.qml
+    // already uses for this reason.
+    onVisibleChanged: if (visible) Qt.callLater(forceActiveFocus)
 
     function validationFor(index) {
         if (index === 0)

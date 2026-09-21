@@ -28,6 +28,11 @@ AppSettingsData AppSettings::load()
     data.steamApiKey = obj.value(QStringLiteral("steamApiKey")).toString();
     data.steamId = obj.value(QStringLiteral("steamId")).toString();
     data.steamGridDbKey = obj.value(QStringLiteral("steamGridDbKey")).toString();
+    // Defaults to true (see app_settings.h) for anyone who never touched
+    // this setting, including existing settings.json files from before it
+    // existed -- toBool(true) only falls back to that default when the key
+    // is genuinely absent, not when it's present-and-false.
+    data.fullscreen = obj.value(QStringLiteral("fullscreen")).toBool(true);
     return data;
 }
 
@@ -37,6 +42,7 @@ bool AppSettings::save(const AppSettingsData &data, QString *errorOut)
     obj.insert(QStringLiteral("steamApiKey"), data.steamApiKey);
     obj.insert(QStringLiteral("steamId"), data.steamId);
     obj.insert(QStringLiteral("steamGridDbKey"), data.steamGridDbKey);
+    obj.insert(QStringLiteral("fullscreen"), data.fullscreen);
 
     const QString path = filePath();
     if (!QDir().mkpath(QFileInfo(path).absolutePath())) {

@@ -11,6 +11,11 @@ struct AppSettingsData
     QString steamApiKey;
     QString steamId;
     QString steamGridDbKey;
+    // Console-style launchers default to fullscreen; a couch setup with a
+    // TV as the only display rarely wants a windowed titlebar, but this is
+    // still user-toggleable from SettingsScreen.qml for anyone running it
+    // on a desktop monitor instead.
+    bool fullscreen = true;
 };
 
 // Plain, non-QObject persistence for the above -- deliberately not part of

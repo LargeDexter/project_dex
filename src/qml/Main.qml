@@ -8,6 +8,11 @@ Window {
     width: 1280
     height: 720
     visible: true
+    // Toggleable from Settings (SettingsScreen.qml) rather than fixed --
+    // couch setups on a TV generally want fullscreen, but this also runs
+    // fine on a regular desktop monitor windowed. Windowed keeps the
+    // width/height above as its size; fullscreen ignores them.
+    visibility: Dex.SettingsManager.fullscreen ? Window.FullScreen : Window.Windowed
     title: "Project Dex"
     color: Dex.Theme.background
 

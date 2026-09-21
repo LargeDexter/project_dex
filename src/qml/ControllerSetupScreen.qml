@@ -22,7 +22,11 @@ Item {
     // can get silently clobbered the moment active focus moves elsewhere
     // for any other reason (see GameRow.qml's onIsActiveRowChanged for the
     // same pattern), so this re-asserts it every time the wizard opens.
-    onVisibleChanged: if (visible) forceActiveFocus()
+    // Qt.callLater, not a direct call -- see SetupWizardScreen.qml's
+    // identical comment: a forceActiveFocus() that lands mid window-state
+    // transition (e.g. right after toggling fullscreen in Settings, then
+    // opening this screen) doesn't stick.
+    onVisibleChanged: if (visible) Qt.callLater(forceActiveFocus)
 
     // Every action GamepadInput knows how to remap, walked through in
     // order. Captured once up front rather than re-queried every step --

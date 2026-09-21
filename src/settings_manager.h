@@ -38,6 +38,11 @@ class SettingsManager : public QObject
     // falls back to just showing the instructions URL as plain text when
     // this is false.
     Q_PROPERTY(bool qrCodeAvailable READ qrCodeAvailable CONSTANT)
+    // Whether the main window should run fullscreen or windowed -- see
+    // Main.qml, which binds its `visibility` to this. Read/write (unlike
+    // the credential fields above, which only change via the wizard's
+    // save()) since SettingsScreen.qml toggles this directly.
+    Q_PROPERTY(bool fullscreen READ fullscreen WRITE setFullscreen NOTIFY fullscreenChanged)
 
 public:
     explicit SettingsManager(QObject *parent = nullptr);
@@ -47,6 +52,8 @@ public:
     QString steamGridDbKey() const { return m_steamGridDbKey; }
     bool hasCredentials() const { return !m_steamApiKey.isEmpty() && !m_steamId.isEmpty(); }
     bool qrCodeAvailable() const;
+    bool fullscreen() const { return m_fullscreen; }
+    void setFullscreen(bool value);
 
 public slots:
     // Persists all three fields at once (the wizard's Save button) and
@@ -71,9 +78,11 @@ signals:
     void steamIdChanged();
     void steamGridDbKeyChanged();
     void hasCredentialsChanged();
+    void fullscreenChanged();
 
 private:
     QString m_steamApiKey;
     QString m_steamId;
     QString m_steamGridDbKey;
+    bool m_fullscreen = true;
 };

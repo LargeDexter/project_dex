@@ -9,6 +9,7 @@ SettingsManager::SettingsManager(QObject *parent) : QObject(parent)
     m_steamApiKey = data.steamApiKey;
     m_steamId = data.steamId;
     m_steamGridDbKey = data.steamGridDbKey;
+    m_fullscreen = data.fullscreen;
 }
 
 bool SettingsManager::qrCodeAvailable() const
@@ -30,6 +31,11 @@ QString SettingsManager::save(const QString &steamApiKey, const QString &steamId
     data.steamApiKey = trimmedApiKey;
     data.steamId = trimmedSteamId;
     data.steamGridDbKey = trimmedGridDbKey;
+    // Carry the current fullscreen setting through -- AppSettings::save()
+    // always writes a complete settings.json, so leaving this at the
+    // struct's default would silently reset it to true every time the
+    // wizard saves credentials.
+    data.fullscreen = m_fullscreen;
 
     QString error;
     if (!AppSettings::save(data, &error))
@@ -58,6 +64,30 @@ QString SettingsManager::save(const QString &steamApiKey, const QString &steamId
         emit hasCredentialsChanged();
 
     return QString(); // empty = success
+}
+
+void SettingsManager::setFullscreen(bool value)
+{
+    if (value == m_fullscreen)
+        return;
+
+    // Same "write the complete current state" concern as save() above --
+    // carry the credential fields through so toggling this doesn't wipe
+    // whatever's already saved.
+    AppSettingsData data;
+    data.steamApiKey = m_steamApiKey;
+    data.steamId = m_steamId;
+    data.steamGridDbKey = m_steamGridDbKey;
+    data.fullscreen = value;
+
+    // Best-effort: if the write fails (e.g. disk full), still flip the
+    // in-memory/UI state so the window responds immediately -- worst case
+    // the preference doesn't survive a restart, which isn't worth blocking
+    // or erroring the toggle over.
+    AppSettings::save(data);
+
+    m_fullscreen = value;
+    emit fullscreenChanged();
 }
 
 QString SettingsManager::validateSteamApiKey(const QString &key) const

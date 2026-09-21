@@ -26,11 +26,17 @@ Item {
     signal openControllerSetup()
     signal openAccountSetup()
 
-    // Rows 0-2: actions. Rows 3-5: read-only credential rows (reveal
-    // toggle only -- editing goes through Account Setup, which already
-    // has proper validation and the on-screen keyboard).
-    readonly property var actionLabels: ["Refresh Library Now", "Controller Setup", "Account Setup (Edit Keys)"]
+    // Rows 0-3: actions. Row 4: the fullscreen toggle. Rows 5-7: read-only
+    // credential rows (reveal toggle only -- editing goes through Account
+    // Setup, which already has proper validation and the on-screen
+    // keyboard). Every index after actionLabels is derived from its length
+    // below, so adding/reordering an action here doesn't need touching
+    // those.
+    readonly property var actionLabels: ["Refresh Library Now", "Controller Setup", "Account Setup (Edit Keys)", "Quit"]
     readonly property var credentialLabels: ["Steam API Key", "SteamID64", "SteamGridDB Key"]
+    readonly property int fullscreenCursor: actionLabels.length
+    readonly property int credentialCursorStart: fullscreenCursor + 1
+    readonly property int maxCursor: credentialCursorStart + credentialLabels.length - 1
 
     property int cursor: 0
     property var revealed: [false, false, false]
@@ -45,7 +51,11 @@ Item {
         root.closed()
     }
 
-    onVisibleChanged: if (visible) forceActiveFocus()
+    // Qt.callLater, not a direct call -- see SetupWizardScreen.qml's
+    // identical comment: this screen now toggles fullscreen itself (the
+    // Fullscreen row above), and a forceActiveFocus() that lands mid
+    // window-state transition doesn't stick.
+    onVisibleChanged: if (visible) Qt.callLater(forceActiveFocus)
 
     function credentialValue(index) {
         if (index === 0)
@@ -75,8 +85,12 @@ Item {
             root.openControllerSetup()
         else if (root.cursor === 2)
             root.openAccountSetup()
+        else if (root.cursor === 3)
+            Qt.quit()
+        else if (root.cursor === root.fullscreenCursor)
+            Dex.SettingsManager.fullscreen = !Dex.SettingsManager.fullscreen
         else
-            root.toggleRevealed(root.cursor - 3)
+            root.toggleRevealed(root.cursor - root.credentialCursorStart)
     }
 
     Keys.onPressed: (event) => {
@@ -87,7 +101,7 @@ Item {
             root.cursor = Math.max(0, root.cursor - 1)
             event.accepted = true
         } else if (event.key === Qt.Key_Down) {
-            root.cursor = Math.min(5, root.cursor + 1)
+            root.cursor = Math.min(root.maxCursor, root.cursor + 1)
             event.accepted = true
         } else if (event.key === Qt.Key_Space || event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
             root.activateCursor()
@@ -107,10 +121,10 @@ Item {
         anchors.centerIn: parent
         width: 620
         // Sized from the actual content rather than a guessed fixed value
-        // -- this card holds a variable-length list (3 actions + 3
-        // credential rows + spacers), easy to get wrong by hand and
-        // silently overflow the card's bottom edge (Rectangle doesn't
-        // clip children by default).
+        // -- this card holds a variable-length list (4 actions + the
+        // fullscreen toggle + 3 credential rows + spacers), easy to get
+        // wrong by hand and silently overflow the card's bottom edge
+        // (Rectangle doesn't clip children by default).
         height: settingsColumn.implicitHeight + Dex.Theme.spacingLarge * 2
         radius: Dex.Theme.radiusMedium
         color: Dex.Theme.surface
@@ -147,7 +161,14 @@ Item {
                         anchors.leftMargin: Dex.Theme.spacingMedium
                         anchors.verticalCenter: parent.verticalCenter
                         text: root.actionLabels[rowIndex]
-                        color: Dex.Theme.textPrimary
+                        // Quit gets the same "danger" red used elsewhere in
+                        // this app for a borked/incompatible verdict (see
+                        // ExpandedGameView.qml's protonDbTierColor) rather
+                        // than a new Theme token for one row -- it's the
+                        // one action here with real consequences (loses
+                        // your place), so it shouldn't blend in with
+                        // Refresh/Controller Setup/Account Setup.
+                        color: root.actionLabels[rowIndex] === "Quit" ? "#E05555" : Dex.Theme.textPrimary
                         font.pixelSize: Dex.Theme.fontSizeMedium
                     }
 
@@ -157,6 +178,43 @@ Item {
                             root.cursor = rowIndex
                             root.activateCursor()
                         }
+                    }
+                }
+            }
+
+            Item { width: 1; height: Dex.Theme.spacingSmall }
+
+            Rectangle {
+                width: card.width - Dex.Theme.spacingLarge * 2
+                height: 52
+                radius: Dex.Theme.radiusSmall
+                color: Dex.Theme.surfaceHighlight
+                border.color: Dex.Theme.accentGlow
+                border.width: (root.cursor === root.fullscreenCursor) ? Dex.Theme.glowRingWidth : 0
+
+                Text {
+                    anchors.left: parent.left
+                    anchors.leftMargin: Dex.Theme.spacingMedium
+                    anchors.verticalCenter: parent.verticalCenter
+                    text: "Fullscreen"
+                    color: Dex.Theme.textPrimary
+                    font.pixelSize: Dex.Theme.fontSizeMedium
+                }
+
+                Text {
+                    anchors.right: parent.right
+                    anchors.rightMargin: Dex.Theme.spacingMedium
+                    anchors.verticalCenter: parent.verticalCenter
+                    text: Dex.SettingsManager.fullscreen ? "On" : "Off"
+                    color: Dex.SettingsManager.fullscreen ? Dex.Theme.accent : Dex.Theme.textSecondary
+                    font.pixelSize: Dex.Theme.fontSizeMedium
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        root.cursor = root.fullscreenCursor
+                        Dex.SettingsManager.fullscreen = !Dex.SettingsManager.fullscreen
                     }
                 }
             }
@@ -174,7 +232,7 @@ Item {
 
                 delegate: Rectangle {
                     property int rowIndex: index
-                    property int cursorSlot: rowIndex + 3
+                    property int cursorSlot: rowIndex + root.credentialCursorStart
                     width: card.width - Dex.Theme.spacingLarge * 2
                     height: 56
                     radius: Dex.Theme.radiusSmall
