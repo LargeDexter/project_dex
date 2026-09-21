@@ -1,0 +1,18 @@
+{
+    "classes": [
+        {
+            "className": "StoreDetailsClient",
+            "lineNumber": 6,
+            "object": true,
+            "qualifiedClassName": "StoreDetailsClient",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "store_details_client.h",
+    "outputRevision": 68
+}

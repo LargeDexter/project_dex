@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/system_specs_test.dir/system_specs_test_autogen/mocs_compilation.cpp.o CMakeFiles/system_specs_test.dir/src/system_specs.cpp.o CMakeFiles/system_specs_test.dir/src/system_specs_test_main.cpp.o CMakeFiles/system_specs_test.dir/build/.qt/rcc/qrc_hardware_data_test.cpp.o -o system_specs_test  /usr/lib64/libQt6Core.so.6.8.2

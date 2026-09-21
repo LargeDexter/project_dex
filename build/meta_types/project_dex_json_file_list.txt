@@ -1,0 +1,14 @@
+/home/dexter/dev/project-dex/build/project_dex_autogen/include/../UVLADIE3JM/moc_artwork_client.cpp.json
+/home/dexter/dev/project-dex/build/project_dex_autogen/include/../UVLADIE3JM/moc_game_library_model.cpp.json
+/home/dexter/dev/project-dex/build/project_dex_autogen/include/../UVLADIE3JM/moc_gamepad_input.cpp.json
+/home/dexter/dev/project-dex/build/project_dex_autogen/include/../UVLADIE3JM/moc_input_state.cpp.json
+/home/dexter/dev/project-dex/build/project_dex_autogen/include/../UVLADIE3JM/moc_library_scanner.cpp.json
+/home/dexter/dev/project-dex/build/project_dex_autogen/include/../UVLADIE3JM/moc_library_sync_worker.cpp.json
+/home/dexter/dev/project-dex/build/project_dex_autogen/include/../UVLADIE3JM/moc_proton_db_client.cpp.json
+/home/dexter/dev/project-dex/build/project_dex_autogen/include/../UVLADIE3JM/moc_settings_manager.cpp.json
+/home/dexter/dev/project-dex/build/project_dex_autogen/include/../UVLADIE3JM/moc_steam_client.cpp.json
+/home/dexter/dev/project-dex/build/project_dex_autogen/include/../UVLADIE3JM/moc_store_details_client.cpp.json
+/home/dexter/dev/project-dex/build/project_dex_autogen/include/../UVLADIE3JM/moc_system_specs.cpp.json
+/home/dexter/dev/project-dex/build/project_dex_autogen/include/../UVLADIE3JM/moc_theme.cpp.json
+/home/dexter/dev/project-dex/build/project_dex_autogen/include/../UVLADIE3JM/moc_trailer_cache.cpp.json
+/home/dexter/dev/project-dex/build/project_dex_autogen/include/../UVLADIE3JM/moc_ui_state.cpp.json

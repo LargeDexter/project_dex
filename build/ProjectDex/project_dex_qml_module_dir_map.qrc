@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/ProjectDex">/home/dexter/dev/project-dex/build/ProjectDex</file>
+
+  </qresource>
+</RCC>

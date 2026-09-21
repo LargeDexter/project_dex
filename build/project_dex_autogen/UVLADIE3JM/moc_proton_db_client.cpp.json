@@ -1,0 +1,18 @@
+{
+    "classes": [
+        {
+            "className": "ProtonDbClient",
+            "lineNumber": 12,
+            "object": true,
+            "qualifiedClassName": "ProtonDbClient",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "proton_db_client.h",
+    "outputRevision": 68
+}

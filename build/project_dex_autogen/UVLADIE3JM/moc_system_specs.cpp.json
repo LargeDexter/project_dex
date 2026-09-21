@@ -1,0 +1,116 @@
+{
+    "classes": [
+        {
+            "className": "SystemSpecs",
+            "lineNumber": 21,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "label",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "value",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "matchLevel",
+                    "returnType": "QString"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "cpuModel",
+                    "read": "cpuModel",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "cpuCores",
+                    "read": "cpuCores",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false
+                },
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "cpuGhz",
+                    "read": "cpuGhz",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false
+                },
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "ramGiB",
+                    "read": "ramGiB",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false
+                },
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "gpuModel",
+                    "read": "gpuModel",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "name": "gpuVramGiB",
+                    "read": "gpuVramGiB",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "SystemSpecs",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "system_specs.h",
+    "outputRevision": 68
+}

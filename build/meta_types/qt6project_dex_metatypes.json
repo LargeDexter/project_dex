@@ -1,0 +1,1356 @@
+[
+    {
+        "classes": [
+            {
+                "className": "ArtworkClient",
+                "lineNumber": 6,
+                "object": true,
+                "qualifiedClassName": "ArtworkClient",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "artwork_client.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "GameLibraryModel",
+                "lineNumber": 19,
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "syncing",
+                        "notify": "syncingChanged",
+                        "read": "isSyncing",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "name": "count",
+                        "notify": "countChanged",
+                        "read": "count",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 2,
+                        "name": "heroGames",
+                        "notify": "heroGamesChanged",
+                        "read": "heroGames",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QVariantList",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 3,
+                        "name": "categoryRows",
+                        "notify": "categoryRowsChanged",
+                        "read": "categoryRows",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QVariantList",
+                        "user": false
+                    }
+                ],
+                "qualifiedClassName": "GameLibraryModel",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "syncingChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "error",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 1,
+                        "name": "syncFailed",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "name": "countChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 3,
+                        "name": "heroGamesChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 4,
+                        "name": "categoryRowsChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "appId",
+                                "type": "qint64"
+                            }
+                        ],
+                        "index": 5,
+                        "name": "storeDetailsReady",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "appId",
+                                "type": "qint64"
+                            }
+                        ],
+                        "index": 6,
+                        "name": "protonDbRatingReady",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "appId",
+                                "type": "qint64"
+                            }
+                        ],
+                        "index": 7,
+                        "name": "trailerCached",
+                        "returnType": "void"
+                    }
+                ],
+                "slots": [
+                    {
+                        "access": "public",
+                        "index": 8,
+                        "name": "refresh",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "index",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 9,
+                        "name": "gameAt",
+                        "returnType": "QVariantMap"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "appId",
+                                "type": "qint64"
+                            }
+                        ],
+                        "index": 10,
+                        "name": "gameByAppId",
+                        "returnType": "QVariantMap"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "appId",
+                                "type": "qint64"
+                            }
+                        ],
+                        "index": 11,
+                        "name": "storeDetailsFor",
+                        "returnType": "QVariantMap"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "appId",
+                                "type": "qint64"
+                            }
+                        ],
+                        "index": 12,
+                        "name": "requestStoreDetails",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "appId",
+                                "type": "qint64"
+                            }
+                        ],
+                        "index": 13,
+                        "name": "protonDbRatingFor",
+                        "returnType": "QVariantMap"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "appId",
+                                "type": "qint64"
+                            }
+                        ],
+                        "index": 14,
+                        "name": "requestProtonDbRating",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "appId",
+                                "type": "qint64"
+                            }
+                        ],
+                        "index": 15,
+                        "name": "cachedTrailerUrlFor",
+                        "returnType": "QString"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "appId",
+                                "type": "qint64"
+                            },
+                            {
+                                "name": "remoteUrl",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 16,
+                        "name": "requestTrailerCache",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "appId",
+                                "type": "qint64"
+                            }
+                        ],
+                        "index": 17,
+                        "name": "launchGameViaSteamCli",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "private",
+                        "arguments": [
+                            {
+                                "name": "entry",
+                                "type": "GameEntry"
+                            }
+                        ],
+                        "index": 18,
+                        "name": "onGameReady",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "private",
+                        "index": 19,
+                        "name": "onInstallStateChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "private",
+                        "index": 20,
+                        "name": "onSyncFinished",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QAbstractListModel"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "game_library_model.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "GamepadInput",
+                "lineNumber": 36,
+                "methods": [
+                    {
+                        "access": "public",
+                        "index": 4,
+                        "name": "calibrationActions",
+                        "returnType": "QStringList"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "action",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 5,
+                        "name": "actionLabel",
+                        "returnType": "QString"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "action",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 6,
+                        "name": "currentBindingLabel",
+                        "returnType": "QString"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "action",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 7,
+                        "name": "startCalibration",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 8,
+                        "name": "cancelCalibration",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "action",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 9,
+                        "name": "resetBindingToDefault",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 10,
+                        "name": "resetAllBindingsToDefault",
+                        "returnType": "void"
+                    }
+                ],
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "connected",
+                        "notify": "connectedChanged",
+                        "read": "connected",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "name": "calibrating",
+                        "notify": "calibratingChanged",
+                        "read": "calibrating",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 2,
+                        "name": "calibratingAction",
+                        "notify": "calibratingActionChanged",
+                        "read": "calibratingAction",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false
+                    }
+                ],
+                "qualifiedClassName": "GamepadInput",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "connectedChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 1,
+                        "name": "calibratingChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "name": "calibratingActionChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "action",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "label",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 3,
+                        "name": "calibrationCaptured",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "gamepad_input.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "InputState",
+                "lineNumber": 11,
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "hasInteracted",
+                        "notify": "hasInteractedChanged",
+                        "read": "hasInteracted",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "name": "mode",
+                        "notify": "modeChanged",
+                        "read": "mode",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 2,
+                        "name": "mouseSuppressed",
+                        "notify": "mouseSuppressedChanged",
+                        "read": "mouseSuppressed",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false
+                    }
+                ],
+                "qualifiedClassName": "InputState",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "hasInteractedChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 1,
+                        "name": "modeChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "name": "mouseSuppressedChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "slots": [
+                    {
+                        "access": "public",
+                        "index": 3,
+                        "name": "reportKeyboardInput",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 4,
+                        "name": "reportMouseInput",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 5,
+                        "name": "reportMouseMoved",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 6,
+                        "name": "reportControllerInput",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "input_state.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "LibraryScanner",
+                "lineNumber": 17,
+                "object": true,
+                "qualifiedClassName": "LibraryScanner",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "installChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "library_scanner.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "LibrarySyncWorker",
+                "lineNumber": 13,
+                "object": true,
+                "qualifiedClassName": "LibrarySyncWorker",
+                "signals": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "entry",
+                                "type": "GameEntry"
+                            }
+                        ],
+                        "index": 0,
+                        "name": "gameReady",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 1,
+                        "name": "installStateChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "name": "syncFinished",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "error",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 3,
+                        "name": "syncFailed",
+                        "returnType": "void"
+                    }
+                ],
+                "slots": [
+                    {
+                        "access": "public",
+                        "index": 4,
+                        "name": "startSync",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "library_sync_worker.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "ProtonDbClient",
+                "lineNumber": 12,
+                "object": true,
+                "qualifiedClassName": "ProtonDbClient",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "proton_db_client.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "SettingsManager",
+                "lineNumber": 20,
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "steamApiKey",
+                        "notify": "steamApiKeyChanged",
+                        "read": "steamApiKey",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "name": "steamId",
+                        "notify": "steamIdChanged",
+                        "read": "steamId",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 2,
+                        "name": "steamGridDbKey",
+                        "notify": "steamGridDbKeyChanged",
+                        "read": "steamGridDbKey",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 3,
+                        "name": "hasCredentials",
+                        "notify": "hasCredentialsChanged",
+                        "read": "hasCredentials",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 4,
+                        "name": "qrCodeAvailable",
+                        "read": "qrCodeAvailable",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false
+                    }
+                ],
+                "qualifiedClassName": "SettingsManager",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "steamApiKeyChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 1,
+                        "name": "steamIdChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "name": "steamGridDbKeyChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 3,
+                        "name": "hasCredentialsChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "slots": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "steamApiKey",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "steamId",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "steamGridDbKey",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 4,
+                        "name": "save",
+                        "returnType": "QString"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "key",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 5,
+                        "name": "validateSteamApiKey",
+                        "returnType": "QString"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "steamId",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 6,
+                        "name": "validateSteamId",
+                        "returnType": "QString"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "key",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 7,
+                        "name": "validateSteamGridDbKey",
+                        "returnType": "QString"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "settings_manager.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "SteamClient",
+                "lineNumber": 14,
+                "object": true,
+                "qualifiedClassName": "SteamClient",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "steam_client.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "StoreDetailsClient",
+                "lineNumber": 6,
+                "object": true,
+                "qualifiedClassName": "StoreDetailsClient",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "store_details_client.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "SystemSpecs",
+                "lineNumber": 21,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "label",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "value",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 0,
+                        "name": "matchLevel",
+                        "returnType": "QString"
+                    }
+                ],
+                "object": true,
+                "properties": [
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "cpuModel",
+                        "read": "cpuModel",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "name": "cpuCores",
+                        "read": "cpuCores",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 2,
+                        "name": "cpuGhz",
+                        "read": "cpuGhz",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 3,
+                        "name": "ramGiB",
+                        "read": "ramGiB",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 4,
+                        "name": "gpuModel",
+                        "read": "gpuModel",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 5,
+                        "name": "gpuVramGiB",
+                        "read": "gpuVramGiB",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false
+                    }
+                ],
+                "qualifiedClassName": "SystemSpecs",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "system_specs.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "Theme",
+                "lineNumber": 12,
+                "object": true,
+                "properties": [
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "background",
+                        "read": "background",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QColor",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "name": "surface",
+                        "read": "surface",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QColor",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 2,
+                        "name": "surfaceHighlight",
+                        "read": "surfaceHighlight",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QColor",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 3,
+                        "name": "accent",
+                        "read": "accent",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QColor",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 4,
+                        "name": "accentGlow",
+                        "read": "accentGlow",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QColor",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 5,
+                        "name": "textPrimary",
+                        "read": "textPrimary",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QColor",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 6,
+                        "name": "textSecondary",
+                        "read": "textSecondary",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QColor",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 7,
+                        "name": "radiusSmall",
+                        "read": "radiusSmall",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 8,
+                        "name": "radiusMedium",
+                        "read": "radiusMedium",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 9,
+                        "name": "radiusPill",
+                        "read": "radiusPill",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 10,
+                        "name": "spacingSmall",
+                        "read": "spacingSmall",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 11,
+                        "name": "spacingMedium",
+                        "read": "spacingMedium",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 12,
+                        "name": "spacingLarge",
+                        "read": "spacingLarge",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 13,
+                        "name": "fontSizeSmall",
+                        "read": "fontSizeSmall",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 14,
+                        "name": "fontSizeMedium",
+                        "read": "fontSizeMedium",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 15,
+                        "name": "fontSizeLarge",
+                        "read": "fontSizeLarge",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 16,
+                        "name": "glowRingWidth",
+                        "read": "glowRingWidth",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false
+                    }
+                ],
+                "qualifiedClassName": "Theme",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "theme.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "TrailerCache",
+                "lineNumber": 21,
+                "object": true,
+                "qualifiedClassName": "TrailerCache",
+                "signals": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "appId",
+                                "type": "qint64"
+                            }
+                        ],
+                        "index": 0,
+                        "name": "trailerCached",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "trailer_cache.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "UiState",
+                "lineNumber": 5,
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "expandedAppId",
+                        "notify": "expandedAppIdChanged",
+                        "read": "expandedAppId",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "qint64",
+                        "user": false
+                    }
+                ],
+                "qualifiedClassName": "UiState",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "expandedAppIdChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "slots": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "appId",
+                                "type": "qint64"
+                            }
+                        ],
+                        "index": 1,
+                        "name": "expandGame",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "name": "collapse",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "ui_state.h",
+        "outputRevision": 68
+    }
+]

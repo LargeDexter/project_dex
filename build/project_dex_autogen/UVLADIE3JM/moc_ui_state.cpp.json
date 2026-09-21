@@ -1,0 +1,62 @@
+{
+    "classes": [
+        {
+            "className": "UiState",
+            "lineNumber": 5,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "expandedAppId",
+                    "notify": "expandedAppIdChanged",
+                    "read": "expandedAppId",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "qint64",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "UiState",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "expandedAppIdChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "appId",
+                            "type": "qint64"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "expandGame",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "collapse",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "ui_state.h",
+    "outputRevision": 68
+}

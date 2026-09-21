@@ -1,0 +1,32 @@
+{
+    "classes": [
+        {
+            "className": "TrailerCache",
+            "lineNumber": 21,
+            "object": true,
+            "qualifiedClassName": "TrailerCache",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "appId",
+                            "type": "qint64"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "trailerCached",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "trailer_cache.h",
+    "outputRevision": 68
+}

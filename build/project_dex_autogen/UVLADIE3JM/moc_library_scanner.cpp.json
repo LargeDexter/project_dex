@@ -1,0 +1,26 @@
+{
+    "classes": [
+        {
+            "className": "LibraryScanner",
+            "lineNumber": 17,
+            "object": true,
+            "qualifiedClassName": "LibraryScanner",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "installChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "library_scanner.h",
+    "outputRevision": 68
+}

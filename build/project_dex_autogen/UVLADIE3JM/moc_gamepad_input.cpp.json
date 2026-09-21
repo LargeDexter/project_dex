@@ -1,0 +1,166 @@
+{
+    "classes": [
+        {
+            "className": "GamepadInput",
+            "lineNumber": 36,
+            "methods": [
+                {
+                    "access": "public",
+                    "index": 4,
+                    "name": "calibrationActions",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "action",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "actionLabel",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "action",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "currentBindingLabel",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "action",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "startCalibration",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 8,
+                    "name": "cancelCalibration",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "action",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 9,
+                    "name": "resetBindingToDefault",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 10,
+                    "name": "resetAllBindingsToDefault",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "connected",
+                    "notify": "connectedChanged",
+                    "read": "connected",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "calibrating",
+                    "notify": "calibratingChanged",
+                    "read": "calibrating",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "calibratingAction",
+                    "notify": "calibratingActionChanged",
+                    "read": "calibratingAction",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "GamepadInput",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "connectedChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "calibratingChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "calibratingActionChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "action",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "label",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "calibrationCaptured",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "gamepad_input.h",
+    "outputRevision": 68
+}

@@ -1,0 +1,294 @@
+{
+    "classes": [
+        {
+            "className": "GameLibraryModel",
+            "lineNumber": 19,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "syncing",
+                    "notify": "syncingChanged",
+                    "read": "isSyncing",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "count",
+                    "notify": "countChanged",
+                    "read": "count",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "heroGames",
+                    "notify": "heroGamesChanged",
+                    "read": "heroGames",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "categoryRows",
+                    "notify": "categoryRowsChanged",
+                    "read": "categoryRows",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "GameLibraryModel",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "syncingChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "error",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "syncFailed",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "countChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 3,
+                    "name": "heroGamesChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "name": "categoryRowsChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "appId",
+                            "type": "qint64"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "storeDetailsReady",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "appId",
+                            "type": "qint64"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "protonDbRatingReady",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "appId",
+                            "type": "qint64"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "trailerCached",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "index": 8,
+                    "name": "refresh",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 9,
+                    "name": "gameAt",
+                    "returnType": "QVariantMap"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "appId",
+                            "type": "qint64"
+                        }
+                    ],
+                    "index": 10,
+                    "name": "gameByAppId",
+                    "returnType": "QVariantMap"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "appId",
+                            "type": "qint64"
+                        }
+                    ],
+                    "index": 11,
+                    "name": "storeDetailsFor",
+                    "returnType": "QVariantMap"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "appId",
+                            "type": "qint64"
+                        }
+                    ],
+                    "index": 12,
+                    "name": "requestStoreDetails",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "appId",
+                            "type": "qint64"
+                        }
+                    ],
+                    "index": 13,
+                    "name": "protonDbRatingFor",
+                    "returnType": "QVariantMap"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "appId",
+                            "type": "qint64"
+                        }
+                    ],
+                    "index": 14,
+                    "name": "requestProtonDbRating",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "appId",
+                            "type": "qint64"
+                        }
+                    ],
+                    "index": 15,
+                    "name": "cachedTrailerUrlFor",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "appId",
+                            "type": "qint64"
+                        },
+                        {
+                            "name": "remoteUrl",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 16,
+                    "name": "requestTrailerCache",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "appId",
+                            "type": "qint64"
+                        }
+                    ],
+                    "index": 17,
+                    "name": "launchGameViaSteamCli",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "private",
+                    "arguments": [
+                        {
+                            "name": "entry",
+                            "type": "GameEntry"
+                        }
+                    ],
+                    "index": 18,
+                    "name": "onGameReady",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "index": 19,
+                    "name": "onInstallStateChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "index": 20,
+                    "name": "onSyncFinished",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractListModel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "game_library_model.h",
+    "outputRevision": 68
+}

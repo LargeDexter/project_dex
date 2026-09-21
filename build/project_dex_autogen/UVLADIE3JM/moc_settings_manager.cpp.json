@@ -1,0 +1,173 @@
+{
+    "classes": [
+        {
+            "className": "SettingsManager",
+            "lineNumber": 20,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "steamApiKey",
+                    "notify": "steamApiKeyChanged",
+                    "read": "steamApiKey",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "steamId",
+                    "notify": "steamIdChanged",
+                    "read": "steamId",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "steamGridDbKey",
+                    "notify": "steamGridDbKeyChanged",
+                    "read": "steamGridDbKey",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "hasCredentials",
+                    "notify": "hasCredentialsChanged",
+                    "read": "hasCredentials",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                },
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "qrCodeAvailable",
+                    "read": "qrCodeAvailable",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "SettingsManager",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "steamApiKeyChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "steamIdChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "steamGridDbKeyChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 3,
+                    "name": "hasCredentialsChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "steamApiKey",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "steamId",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "steamGridDbKey",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "save",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "key",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "validateSteamApiKey",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "steamId",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "validateSteamId",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "key",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "validateSteamGridDbKey",
+                    "returnType": "QString"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "settings_manager.h",
+    "outputRevision": 68
+}

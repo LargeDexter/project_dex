@@ -1,0 +1,15 @@
+module ProjectDex
+typeinfo project_dex.qmltypes
+prefer :/ProjectDex/
+Main 1.0 src/qml/Main.qml
+Hero 1.0 src/qml/Hero.qml
+GameRow 1.0 src/qml/GameRow.qml
+GameTile 1.0 src/qml/GameTile.qml
+DetailPanel 1.0 src/qml/DetailPanel.qml
+ExpandedGameView 1.0 src/qml/ExpandedGameView.qml
+Icon 1.0 src/qml/Icon.qml
+ControllerSetupScreen 1.0 src/qml/ControllerSetupScreen.qml
+OnScreenKeyboard 1.0 src/qml/OnScreenKeyboard.qml
+SetupWizardScreen 1.0 src/qml/SetupWizardScreen.qml
+SettingsScreen 1.0 src/qml/SettingsScreen.qml
+
