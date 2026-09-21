@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/artwork_test.dir/artwork_test_autogen/mocs_compilation.cpp.o CMakeFiles/artwork_test.dir/src/artwork_client.cpp.o CMakeFiles/artwork_test.dir/src/artwork_test_main.cpp.o -o artwork_test  /usr/lib64/libQt6Network.so.6.8.2 /usr/lib64/libQt6Core.so.6.8.2

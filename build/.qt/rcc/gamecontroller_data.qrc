@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/data">
-    <file alias="gamecontrollerdb.txt">/home/dexter/dev/project-dex/data/gamecontrollerdb.txt</file>
-  </qresource>
-</RCC>
-

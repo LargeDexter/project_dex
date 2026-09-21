@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/ProjectDex">
-    <file alias="qmldir">/home/dexter/dev/project-dex/build/ProjectDex/qmldir</file>
-  </qresource>
-</RCC>
-

@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/sync_test.dir/sync_test_autogen/mocs_compilation.cpp.o CMakeFiles/sync_test.dir/src/steam_client.cpp.o CMakeFiles/sync_test.dir/src/sync_test_main.cpp.o -o sync_test  /usr/lib64/libQt6Network.so.6.8.2 /usr/lib64/libQt6Core.so.6.8.2

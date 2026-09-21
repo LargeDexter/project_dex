@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/data">
-    <file alias="hardware_benchmarks.json">/home/dexter/dev/project-dex/data/hardware_benchmarks.json</file>
-  </qresource>
-</RCC>
-
