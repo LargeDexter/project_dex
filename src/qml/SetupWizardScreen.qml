@@ -82,6 +82,28 @@ Item {
     // already uses for this reason.
     onVisibleChanged: if (visible) Qt.callLater(forceActiveFocus)
 
+    // The one-shot callLater above still lost focus to the library on real
+    // hardware at startup, so while open the wizard is modal: any time
+    // window focus lands outside it (or its OnScreenKeyboard child), pull
+    // it back.
+    function keepFocus() {
+        if (!visible)
+            return
+        for (let item = root.Window.window ? root.Window.window.activeFocusItem : null; item; item = item.parent) {
+            if (item === root)
+                return
+        }
+        forceActiveFocus()
+    }
+
+    Connections {
+        target: root.Window.window
+        function onActiveFocusItemChanged() {
+            if (root.visible)
+                Qt.callLater(root.keepFocus)
+        }
+    }
+
     function validationFor(index) {
         if (index === 0)
             return Dex.SettingsManager.validateSteamApiKey(draftValues[0])
